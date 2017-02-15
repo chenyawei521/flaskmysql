@@ -13,7 +13,7 @@ result1 = cur2.fetchall()
 '''cur2.execute("select count(*) from table1 where name='chen'and password ='123456'")
 result=cur2.fetchall()'''
 print result1
-print result
+
 @app.route("/")
 def index():
     x = session.get('username')
