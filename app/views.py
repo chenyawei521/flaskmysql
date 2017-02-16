@@ -6,7 +6,8 @@ app.secret_key = '\xf1\x92Y\xdf\x8ejY\x04\x96\xb4V\x88\xfb\xfc\xb5\x18F\xa3\xee\
 
 conn2 = MySQLdb.connect('localhost', 'root', '123456', 'new')
 cur2 = conn2.cursor()
-# cur2.execute("create table table3(name char(10),password char(10))")
+#cur2.execute('drop table table3')
+#cur2.execute("create table table3(name char(10),password char(10))")
 cur2.execute("insert into table3 values( 'chen','123456'),('chang','123456'),('zhang','123456')")
 cur2.execute('SELECT * FROM table3;')
 result1 = cur2.fetchall()
@@ -22,7 +23,7 @@ def index():
     print x, y
     # cur2.execute("select count(*) from table1 where name='"+str(x)+"' and password = '"+str(y)+"'")
     # cur2.execute("select count(*) from table1 where name='jjj' and password = '1111'")
-    cur2.execute("select * from table1 where name= '"+str(x)+"'")
+    cur2.execute("select * from table1 where name= '"+str(x)+"'and password = '"+str(y)+"'")
     result2 = cur2.fetchall()
     print result2, type(result2)
     if type(result2) == tuple and result2 == ():
