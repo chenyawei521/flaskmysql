@@ -15,6 +15,7 @@ result1 = cur2.fetchall()
 result=cur2.fetchall()'''
 print result1
 
+
 @app.route("/")
 def index():
     x = session.get('username')
